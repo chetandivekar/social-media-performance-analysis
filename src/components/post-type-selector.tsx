@@ -42,8 +42,6 @@ function Example() {
 
   if (error) return "An error has occurred: " + error.message;
 
-  console.log("the data is", data);
-
   return (
     <div className="p-4">
       <h1 className="text-3xl font-bold text-gray-800">

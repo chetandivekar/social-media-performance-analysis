@@ -9,7 +9,6 @@ export const connectToDatabase = async () => {
     ); // Astra DB URL
 
     // Optionally, check if the connection is successful by listing collections or performing a query
-    console.log("Successfully connected to Astra DB");
     return db; // Return the db object to be used for further queries
   } catch (error) {
     console.error("Error connecting to Astra DB", error);

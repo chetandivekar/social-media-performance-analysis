@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
       "https://c9cb78b4-b01f-4cf2-8d41-0b6a5d704fee-us-east-2.apps.astra.datastax.com"
     );
     const data = await request.json();
-    console.log(data);
 
     if (!Array.isArray(data)) {
       return NextResponse.json(

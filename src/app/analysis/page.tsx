@@ -66,7 +66,6 @@ export default function Home() {
   };
 
   const handleExampleClick = async (text: string) => {
-    console.log("the text is ", text);
     setMessage(text); // Set the message from the example query
     if (inputRef.current) {
       inputRef.current.focus(); // Focus the input field
