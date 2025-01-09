@@ -1,6 +1,4 @@
 import { EngagementMetrics } from "@/components/Card";
-import { ChartPie } from "@/components/pie-chart";
-import { PostTypeSelector } from "@/components/post-type-selector";
 
 export interface ChartData {
   post_type: string;
@@ -8,14 +6,8 @@ export interface ChartData {
 }
 
 export default function Home() {
-  const chartData: ChartData[] = [
-    { post_type: "reels", numbers: 295 },
-    { post_type: "carousel", numbers: 400 },
-  ];
-
   return (
-    <main className="container mx-auto space-y-6">
-      <h1 className="text-4xl font-bold">Social Media Dashboard</h1>
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <EngagementMetrics />
     </main>
   );
