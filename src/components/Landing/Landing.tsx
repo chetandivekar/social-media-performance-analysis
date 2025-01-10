@@ -4,8 +4,43 @@ import { BsCameraReels, BsBarChartLine, BsPeople } from "react-icons/bs";
 import { FaChartPie, FaRegLightbulb } from "react-icons/fa";
 import { MdTrendingUp } from "react-icons/md";
 import { Lightbulb } from "lucide-react";
+import Image from "next/image";
 
 export default function LandingPage() {
+  const developers = [
+    {
+      name: "Rohan Sharma",
+      role: "Founding Engineer",
+      company: "Rappo",
+      linkedin: "https://www.linkedin.com/in/rohansx/",
+      img: "https://media.licdn.com/dms/image/v2/D5603AQFPi6prxvqIaQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731137766252?e=1741824000&v=beta&t=udmU_vTO1UPREEjgZKO-SEKg6mbMD72yB7PNGMs0dX4",
+      github: "https://github.com/rohansx",
+    },
+    {
+      name: "Haider Patanwala",
+      role: "Associate Application Engineer",
+      company: "Surfboard Ventures",
+      linkedin: "https://www.linkedin.com/in/haiderpatan/",
+      img: "https://media.licdn.com/dms/image/v2/D4D03AQHZhqmis-ck6g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1702198977438?e=1741824000&v=beta&t=8lt_A52b1zhdNDpca9CiA1H0wUhXS31FqKigK6r6efE",
+      github: "https://github.com/haider-patanwala",
+    },
+    {
+      name: "Chetan Divekar",
+      role: "Associate Application Engineer",
+      company: "Surfboard Ventures",
+      linkedin: "https://www.linkedin.com/in/chetan-divekar/",
+      img: "https://media.licdn.com/dms/image/v2/D4D03AQE_eLYYuuciDg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1664886766009?e=1741824000&v=beta&t=Mt_sB40rcWmCqCXqSQZ_v47_aedDQoqL8Ph-uadv2zY",
+      github: "https://www.github.com/chetandivekar",
+    },
+    {
+      name: "Nilesh Kapri",
+      role: "Associate Application Engineer",
+      company: "Raw Engineering",
+      linkedin: "https://www.linkedin.com/in/nilesh-kapri/",
+      img: "https://media.licdn.com/dms/image/v2/D4D03AQHdg17w8iqEGQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726173239533?e=1741824000&v=beta&t=0856RIBPR_ukJ_uj9Y-0lKlpbuvoECXbZncILs3_vG0",
+      github: "https://github.com/itsKapri",
+    },
+  ];
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <header className="p-6">
@@ -61,6 +96,26 @@ export default function LandingPage() {
             title="Trend Forecasting"
             description="Stay ahead of the curve with our AI-powered trend prediction technology."
           />
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Meet the Developers
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {developers.map((developer) => {
+              return (
+                <DeveloperCard
+                  key={developer.name} // It's important to add a key when mapping over a list
+                  name={developer.name}
+                  role={developer.role}
+                  image={developer.img}
+                  linkedin={developer.linkedin}
+                  github={developer.github}
+                />
+              );
+            })}
+          </div>
         </section>
 
         <section className="bg-black/40 backdrop-blur-xl rounded-xl p-8 mb-20">
@@ -172,6 +227,52 @@ function FeatureListItem({
       <div>
         <h3 className="text-lg font-semibold mb-1 text-white">{title}</h3>
         <p className="text-gray-400">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function DeveloperCard({
+  name,
+  role,
+  image,
+  github,
+  linkedin,
+}: {
+  name: string;
+  role: string;
+  image: string;
+  github: string;
+  linkedin: string;
+}) {
+  return (
+    <div className="bg-black/40 backdrop-blur-xl rounded-xl p-6 hover:shadow-purple-500/10 transition-all duration-300 flex flex-col items-center text-center">
+      <Image
+        src={image}
+        alt={`${name}, ${role}`}
+        width={120}
+        height={120}
+        className="rounded-full mb-4"
+      />
+      <h3 className="text-xl font-semibold mb-1 text-white">{name}</h3>
+      <p className="text-purple-400 mb-4">{role}</p>
+      <div className="flex space-x-4">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-white transition-all duration-300"
+        >
+          GitHub
+        </a>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-white transition-all duration-300"
+        >
+          LinkedIn
+        </a>
       </div>
     </div>
   );
