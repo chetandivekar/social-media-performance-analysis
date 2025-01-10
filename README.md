@@ -19,6 +19,10 @@ A powerful social media analysis platform built with LangFlow, AstraDB, and Next
 - **Styling**: Tailwind CSS
 - **API**: REST
 
+## LangFlow Pipeline Overview 📊
+
+![LangFlow Pipeline](/public/langflow.png)
+
 ## Prerequisites 📋
 
 - Node.js (v18 or higher)
