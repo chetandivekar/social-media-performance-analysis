@@ -112,6 +112,7 @@ export default function LandingPage() {
                   image={developer.img}
                   linkedin={developer.linkedin}
                   github={developer.github}
+                  company={developer.company}
                 />
               );
             })}
@@ -238,12 +239,14 @@ function DeveloperCard({
   image,
   github,
   linkedin,
+  company,
 }: {
   name: string;
   role: string;
   image: string;
   github: string;
   linkedin: string;
+  company: string;
 }) {
   return (
     <div className="bg-black/40 backdrop-blur-xl rounded-xl p-6 hover:shadow-purple-500/10 transition-all duration-300 flex flex-col items-center text-center">
@@ -255,7 +258,9 @@ function DeveloperCard({
         className="rounded-full mb-4"
       />
       <h3 className="text-xl font-semibold mb-1 text-white">{name}</h3>
-      <p className="text-purple-400 mb-4">{role}</p>
+      <p className="text-purple-400 mb-2">{role}</p>
+      <p className="text-gray-300 mb-4 text-sm">@{company} </p>{" "}
+      {/* Company name display */}
       <div className="flex space-x-4">
         <a
           href={github}
