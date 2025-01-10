@@ -15,6 +15,7 @@ import { FaRegHeart, FaRegCommentAlt } from "react-icons/fa";
 import { MostAndLeastMetrics } from "./MostandLeast";
 import { CiShare1 } from "react-icons/ci";
 import Link from "next/link";
+import { Lightbulb } from "lucide-react";
 
 const queryClient = new QueryClient();
 
@@ -66,12 +67,14 @@ export function OverviewMetrics() {
         <div className="text-center mb-8 mt-2">
           <div className="md:flex md:items-center md:relative  ">
             <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 absolute left-1/2 transform -translate-x-1/2">
-              NEXUS Dasboard
+              SocialLens Dasboard
             </h1>
             <Link href="/analysis" className="ml-auto">
-              <button className="px-6 py-3 text-lg font-semibold text-white bg-purple-500 hover:bg-purple-600 rounded-lg shadow-md transition-all duration-200">
-                Go to Analysis
-              </button>
+              <div className="px-6 flex gap-2 py-3 text-lg font-semibold text-white bg-purple-500 hover:bg-purple-600 rounded-lg shadow-md transition-all duration-200">
+                <button className="">Insights Hub</button>
+
+                <Lightbulb width={22} />
+              </div>
             </Link>
           </div>
 
